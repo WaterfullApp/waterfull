@@ -30,8 +30,8 @@
         <l-marker ref="liveMarker"
         visible
         :lat-lng="[
-          position.lat || userLocation.lat,
-          position.lng || userLocation.lng,
+          userLocation.lat,
+          userLocation.lng,
         ]"
         >
           <l-icon
@@ -334,6 +334,10 @@
               if (this.liveActivated) {
                 this.$refs.map.leafletObject.addLayer(this.$refs.liveMarker.leafletObject)
                 this.userLocation = {
+                  lat: pos.coords.latitude,
+                  lng: pos.coords.longitude,
+                }
+                this.position = {
                   lat: pos.coords.latitude,
                   lng: pos.coords.longitude,
                 }
