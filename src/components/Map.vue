@@ -30,8 +30,8 @@
         <l-marker ref="liveMarker"
         visible
         :lat-lng="[
-          userLocation.lat,
-          userLocation.lng,
+          position.lat || userLocation.lat,
+          position.lng || userLocation.lng,
         ]"
         >
           <l-icon
