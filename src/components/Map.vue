@@ -109,6 +109,18 @@
                   v-bind:src="item"
                 />
               </div>
+              <div
+                  v-bind:class="marker[4] ? '' : 'd-none'"
+                  class="gradient-round"
+                >
+                  <img class="pict" src="../assets/steps/source.svg" />
+                </div>
+                <div
+                  v-bind:class="marker[5] ? '' : 'd-none'"
+                  class="gradient-round"
+                >
+                  <img class="pict" src="../assets/steps/tap.svg" />
+                </div>
               <h1 style="font-size: 1em; margin-top: 1em;">{{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1]">{{tag}}</h1>
             </l-popup>
@@ -288,20 +300,25 @@
             let cell = []
             let img = ['']
             let drkbl = false
+            let spring = false
+            let tap = false
             for (let [k, t] of Object.entries(marker.tags)) {
-              if (k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'amenity' && k != 'drinking_water') {
+              if (k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'mapillary_url' && k != 'amenity' && k != 'drinking_water' && k != 'natural' && k != 'man_made') {
                 cell.push(k+': '+t)
               } else {
               switch (k) {
-                  case 'image': img.push(t)
-                  case 'image:0': //
-                  case 'image:1': //
-                  case 'image:2': //
-                  case 'image:3': //
-                  case 'image:4': //
-                  case 'mapillary': //
-                  case 'amenity': drkbl = true
-                  case 'drinking_water': drkbl = true
+                  case 'image': img.push(t);break;
+                  case 'image:0': break;//
+                  case 'image:1': break;//
+                  case 'image:2': break;//
+                  case 'image:3': break;//
+                  case 'image:4': break;//
+                  case 'mapillary': break;//
+                  case 'mapillary_url': break;//
+                  case 'amenity': drkbl = true;break;
+                  case 'drinking_water': drkbl = true;break;
+                  case 'natural': if (t == 'spring') spring = true;break;
+                  case 'man_made': tap = true;break;
                 }
               }
             }
@@ -310,6 +327,9 @@
             celll[1] = cell
             celll[2] = img
             celll[3] = drkbl
+            celll[4] = spring
+            celll[5] = tap
+            console.log(celll)
             this.markersP.push(celll)
           }
           if (typeof this.$refs.xtraG != 'undefined') {
