@@ -1,0 +1,48 @@
+{
+  "app": {
+    "title": "Waterfull - FR"
+  },
+  "nav": {
+    "home": "Accueil",
+    "add": "Ajouter une Source",
+    "find": "Trouver une Source"
+  },
+  "home": {
+    "text1-1": "L'eau est un bien public.",
+    "text2-1": "Nous tous pouvons la trouver,",
+    "text1-2": "Son accès est un droit",
+    "text2-2": "partout et à tout moment.",
+    "text3": "Parce que la Terre est pleine d'eau",
+    "text4": "Facilitons son accessibilité!"
+  },
+  "map": {
+    "drinkable": "Potable",
+    "notdrinkable": "Non Potable"
+  },
+  "addSteps": {
+    "step1": {
+      "text1": "Comment atteindre le lieu?",
+      "text2": "Tu peux selectionner les deux"
+    },
+    "step2": {
+      "text1": "D'où vient la source?"
+    },
+    "step3": {
+      "text1": "Est elle potable?"
+    },
+    "step4": {
+      "text1": "Où se trouve t'elle?",
+      "text2": "Position Actuelle",
+      "text3": "Adresse",
+      "text4": "Coordonnées"
+    },
+    "step5": {
+      "text1": "Télécharge une photo"
+    },
+    "step6": {
+      "text1": "Description"
+    },
+    "finalStep1": "Merci!",
+    "finalStep2": "Cela sera d'une très grande aide"
+  }
+}
