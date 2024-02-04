@@ -303,10 +303,11 @@
             let spring = false
             let tap = false
             for (let [k, t] of Object.entries(marker.tags)) {
-              if (k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'mapillary_url' && k != 'amenity' && k != 'drinking_water' && k != 'natural' && k != 'man_made') {
+              if (k != 'name' && k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'mapillary_url' && k != 'amenity' && k != 'drinking_water' && k != 'natural' && k != 'man_made') {
                 cell.push(k+': '+t)
               } else {
               switch (k) {
+                  case 'name':  cell.push(t);break;
                   case 'image': img.push(t);break;
                   case 'image:0': break;//
                   case 'image:1': break;//
