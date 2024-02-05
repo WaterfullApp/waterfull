@@ -318,6 +318,7 @@
       }
     },
     beforeMount() {
+      this.debug = this.getCountry(Intl.DateTimeFormat().resolvedOptions().locale)
       this.position = {
         lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().locale)[0],
         lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().locale)[1],
