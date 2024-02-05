@@ -141,28 +141,38 @@
   }
   @-webkit-keyframes pulse {
     0% {
-      transform: scale(.9);
-    }
-    70% {
       transform: scale(1);
-      box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+      opacity: 1;
     }
-      100% {
-      transform: scale(.9);
-      box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+    94% {
+      transform: scale(1.3);
+      opacity: 0.5;
+    }
+    99% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(.7);
+      opacity: 0.7;
     }
   }
   @keyframes pulse {
     0% {
-      transform: scale(.7);
+      transform: scale(1);
+      opacity: 1;
     }
-    70% {
+    94% {
       transform: scale(1.3);
-      box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+      opacity: 0.5;
     }
-      100% {
+    99% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
       transform: scale(.7);
-      box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+      opacity: 0.7;
     }
   }
   .pict {
@@ -196,8 +206,8 @@
     font-size: large;
   }
   .anim img {
-    -webkit-animation: pulse 1.5s infinite;
-    animation: pulse 3.3s infinite;
+    -webkit-animation: pulse 1.3s infinite;
+    animation: pulse 1.3s infinite;
   }
   .popup-map {
     display: flex;
