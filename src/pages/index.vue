@@ -57,7 +57,7 @@ export default {
         <h2 class="mx-2 mb-8 uppercase whitespace-nowrap">
           <a
             class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white"
-            to="/add"
+            href="https://waterfull.netlify.app/en/add"
           >
             {{ $t('nav.add') }}
         </a>
