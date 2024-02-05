@@ -318,7 +318,6 @@
       }
     },
     beforeMount() {
-      this.debug = this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)
       this.position = {
         lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
         lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1],
@@ -3272,8 +3271,9 @@
             c: ["WS"],
             r: 1
           },
-          "UTC": {
+          UTC: {
             a: "Etc/UTC",
+            c: ["BE"],
             r: 1
           },
           Universal: {
