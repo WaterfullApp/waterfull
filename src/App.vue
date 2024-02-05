@@ -8,6 +8,7 @@ export default {
       router: useRouter(),
       route: useRoute(),
       isActive: true,
+      timezone: Intl.DateTimeFormat().resolvedOptions().locale.substring(0, 2)
     }
   },
   mounted() {
@@ -34,6 +35,7 @@ export default {
   },
   
   beforeMount() {
+    for(let locale of this.$i18n.availableLocales)if(locale===this.timezone)this.$i18n.locale=this.timezone
     this.$nextTick(async function() {
       await this.router.isReady()
       if(this.router.currentRoute.path === '/') {
@@ -88,9 +90,6 @@ export default {
             >
           </router-link>
         </div>
-        <!-- <div>
-          <a class="rounded text-white border-white" />
-        </div> -->
         <div class="rounded text-white border-white">
           <div class="locale-switcher">
             <select class="no-underline inline-block text-sm px-4 py-2 leading-none border rounded mt-4 sm:mt-0" v-model="$i18n.locale">
