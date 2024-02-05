@@ -1,5 +1,6 @@
 <template>
     <div class="justify-center flex">
+      {{ debug }}
       <l-map
         @update:bounds="xtra()"
         ref="map"
@@ -284,6 +285,7 @@
     },
     data() {
       return {
+        debug: 'init',
         watch: null,
         counter: 4,
         iconSizeL: [24, 24],
@@ -316,11 +318,12 @@
       }
     },
     beforeMount() {
+      this.debug = Intl.DateTimeFormat().resolvedOptions().timeZone
       this.position = {
-        /* lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
-        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1], */
-        lat: 10.4,
-        lng: 5.7
+        lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
+        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1],
+        /* lat: 10.4,
+        lng: 5.7 */
       }
     },
     mounted() {
@@ -435,7 +438,7 @@
 
       // List Country ****TODO****
       getCountry() {
-        var countries = {
+        let countries = {
           AD: "Andorra",
           AE: "United Arab Emirates",
           AF: "Afghanistan",
@@ -686,7 +689,7 @@
           ZM: ['13.1339','27.8493'],
           ZW: ['19.0154','29.1549']
         };
-        var timezones = {
+        let timezones = {
           "Africa/Abidjan": {
             u: 0,
             c: ["CI", "BF", "GH", "GM", "GN", "ML", "MR", "SH", "SL", "SN", "TG"]
