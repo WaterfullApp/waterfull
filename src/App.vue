@@ -16,6 +16,14 @@ export default {
   updated() {
     this.getHP()
   },
+  
+  beforeMount() {
+    if(this.$route.path === '/') {
+          this.isActive= false
+        } else {
+          this.isActive= true
+        }
+  },
   methods: {
     async getHP() {
       await this.router.isReady()
