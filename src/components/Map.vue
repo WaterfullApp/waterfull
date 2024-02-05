@@ -251,15 +251,17 @@
         },
         zoom: 8,
         styleObject: {
-          height: '450px',
-          width: '250px',
+          height: window.innerHeight - 250 + 'px',
+          width: window.innerWidth - 50 + 'px',
         },
       }
     },
     beforeMount() {
       this.position = {
-        lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
-        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1],
+        /* lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
+        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1], */
+        lat: 10.4,
+        lng: 5.7
       }
     },
     mounted() {
