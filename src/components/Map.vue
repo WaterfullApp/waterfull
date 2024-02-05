@@ -270,7 +270,7 @@
         watch: null,
         counter: 4,
         iconSizeL: [24, 24],
-        liveActivated: false,
+        liveActivated: true,
         maxClusterR: 70,
         markers: [],
         markersP: [],
