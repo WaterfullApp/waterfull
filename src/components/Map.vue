@@ -21,10 +21,12 @@
         </l-control-layers>
         <l-control position="topright">
           <div
-          :class="{ 'is-active': !liveActivated }"
+          :class="liveActivated ? 'anim' : 'is-active'"
+          class="live-button"
           @click="liveActivated = !liveActivated"
           >
             <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1783/1783356.png" alt="" />
+            <h1>Locate Me</h1>
           </div>
         </l-control>
         <l-marker ref="liveMarker"
@@ -137,6 +139,32 @@
     box-shadow: 0 0 100px #ddd;
     filter: saturate(50%);
   }
+  @-webkit-keyframes pulse {
+    0% {
+      transform: scale(.9);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+    }
+      100% {
+      transform: scale(.9);
+      box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(.7);
+    }
+    70% {
+      transform: scale(1.3);
+      box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+    }
+      100% {
+      transform: scale(.7);
+      box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+    }
+  }
   .pict {
     padding: 0.5em;
     width: 3em;
@@ -156,6 +184,20 @@
   }
   .d-none {
     display: none;
+  }
+  .live-button {
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: large;
+  }
+  .anim img {
+    -webkit-animation: pulse 1.5s infinite;
+    animation: pulse 3.3s infinite;
   }
   .popup-map {
     display: flex;
@@ -228,7 +270,7 @@
         watch: null,
         counter: 4,
         iconSizeL: [24, 24],
-        liveActivated: true,
+        liveActivated: false,
         maxClusterR: 70,
         markers: [],
         markersP: [],
