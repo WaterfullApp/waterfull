@@ -318,10 +318,10 @@
       }
     },
     beforeMount() {
-      this.debug = this.getCountry(Intl.DateTimeFormat().resolvedOptions().locale)
+      this.debug = this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)
       this.position = {
-        lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().locale)[0],
-        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().locale)[1],
+        lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
+        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1],
         /* lat: 10.4,
         lng: 5.7 */
       }
@@ -3272,7 +3272,7 @@
             c: ["WS"],
             r: 1
           },
-          UTC: {
+          "UTC": {
             a: "Etc/UTC",
             r: 1
           },
