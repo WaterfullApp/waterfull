@@ -22,7 +22,7 @@
         <l-control position="topright">
           <div
           :class="liveActivated ? 'anim' : 'is-active'"
-          class="live-button"
+          class="live-button rounded"
           @click="liveActivated = !liveActivated"
           >
             <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1783/1783356.png" alt="" />
@@ -136,7 +136,6 @@
   .is-active {
     transition: 0.3s;
     transition-property: all;
-    box-shadow: 0 0 100px #ddd;
     filter: saturate(50%);
   }
   @-webkit-keyframes pulse {
