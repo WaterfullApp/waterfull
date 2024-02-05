@@ -22,7 +22,7 @@
         <l-control position="topright">
           <div
           :class="liveActivated ? 'anim' : 'is-active'"
-          class="live-button rounded"
+          class="live-button"
           @click="liveActivated = !liveActivated"
           >
             <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1783/1783356.png" alt="" />
