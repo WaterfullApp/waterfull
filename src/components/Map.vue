@@ -26,7 +26,7 @@
           @click="liveActivated = !liveActivated"
           >
             <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1783/1783356.png" alt="" />
-            <h1>Locate Me</h1>
+            <h1>{{ $t('map.locate-me') }}</h1>
           </div>
         </l-control>
         <l-marker ref="liveMarker"
@@ -195,17 +195,22 @@
   .d-none {
     display: none;
   }
+  .live-button img:hover{
+    cursor: pointer;
+    filter: invert(100%);
+  }
   .live-button {
     margin: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: monospace;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
   }
   .anim img {
+    margin: 0.7em;
     -webkit-animation: pulse 1.3s infinite;
     animation: pulse 1.3s infinite;
   }
