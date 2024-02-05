@@ -198,6 +198,9 @@
   .live-button img:hover{
     filter: invert(100%);
   }
+  .live-button img{
+    margin: 0.5em;
+  }
   .live-button {
     margin: 0.5em;
     display: flex;
@@ -210,7 +213,6 @@
     cursor: pointer;
   }
   .anim img {
-    margin: 0.7em;
     -webkit-animation: pulse 1.3s infinite;
     animation: pulse 1.3s infinite;
   }
