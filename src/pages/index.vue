@@ -58,8 +58,9 @@ export default {
           <a
             class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white"
             href="https://waterfull.netlify.app/en/add"
+            target="_blank"
           >
-            {{ $t('nav.add') }}
+            {{ $t('nav.add') + '(v-1)' }}
         </a>
         </h2>
       </div>
