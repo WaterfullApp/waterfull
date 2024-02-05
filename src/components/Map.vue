@@ -138,42 +138,6 @@
     transition-property: all;
     filter: saturate(50%);
   }
-  @-webkit-keyframes pulse {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    94% {
-      transform: scale(1.3);
-      opacity: 0.5;
-    }
-    99% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(.7);
-      opacity: 0.7;
-    }
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    94% {
-      transform: scale(1.3);
-      opacity: 0.5;
-    }
-    99% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(.7);
-      opacity: 0.7;
-    }
-  }
   .pict {
     padding: 0.5em;
     width: 3em;
@@ -252,12 +216,48 @@
     white-space: nowrap;
     overflow: hidden;
   }
+  @-webkit-keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    94% {
+      transform: scale(1.3);
+      opacity: 0.5;
+    }
+    99% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(.7);
+      opacity: 0.7;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    94% {
+      transform: scale(1.3);
+      opacity: 0.5;
+    }
+    99% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(.7);
+      opacity: 0.7;
+    }
+  }
   </style>
   <script>
   import imgUrl from '../assets/marker.svg'
   import imgUrlLight from '../assets/markerLight.svg'
-  import "leaflet/dist/leaflet.css"
-  import "leaflet-geosearch/assets/css/leaflet.css"
+  import 'leaflet/dist/leaflet.css'
+  import 'leaflet-geosearch/assets/css/leaflet.css'
   import 'vue-leaflet-markercluster/dist/style.css'
   import { LMap, LMarker, LTileLayer, LPopup, LIcon, LControl, LFeatureGroup, LControlLayers } from '@vue-leaflet/vue-leaflet'
   import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch'
@@ -316,10 +316,8 @@
     },
     beforeMount() {
       this.position = {
-        lat: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[0],
-        lng: this.getCountry(Intl.DateTimeFormat().resolvedOptions().timeZone)[1],
-        /* lat: 10.4,
-        lng: 5.7 */
+        lat: this.getCountry()[0],
+        lng: this.getCountry()[1],
       }
     },
     mounted() {
@@ -338,19 +336,19 @@
           let sw = bounds.getSouthWest();
           bounds = '('+sw.lat.toString()+','+sw.lng.toString()+','+ne.lat.toString()+','+ne.lng.toString()+')'
           let result = await fetch(
-              "https://overpass-api.de/api/interpreter",
-              {
-                  method: "POST",
-                  body: "data="+ encodeURIComponent(`
-                      [timeout:6]
-                      [out:json];
-                      (
-                      node[amenity=drinking_water]`+bounds+`;
-                      node[drinking_water=yes]`+bounds+`;
-                      );
-                      out body;
-                  `)
-              },
+            'https://overpass-api.de/api/interpreter',
+            {
+              method: 'POST',
+              body: 'data='+ encodeURIComponent(`
+                [timeout:6]
+                [out:json];
+                (
+                node[amenity=drinking_water]`+bounds+`;
+                node[drinking_water=yes]`+bounds+`;
+                );
+                out body;
+              `)
+            },
           )
           let dataP = await result.json()
           for (let marker of dataP.elements) {
@@ -366,16 +364,16 @@
               if (k != 'name' && k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'mapillary_url' && k != 'amenity' && k != 'drinking_water' && k != 'natural' && k != 'man_made') {
                 cell.push(k+': '+t)
               } else {
-              switch (k) {
+                switch (k) {
                   case 'name':  cell.push(t);break;
                   case 'image': img.push(t);break;
-                  case 'image:0': break;//
-                  case 'image:1': break;//
-                  case 'image:2': break;//
-                  case 'image:3': break;//
-                  case 'image:4': break;//
-                  case 'mapillary': break;//
-                  case 'mapillary_url': break;//
+                  case 'image:0': break;
+                  case 'image:1': break;
+                  case 'image:2': break;
+                  case 'image:3': break;
+                  case 'image:4': break;
+                  case 'mapillary': break;
+                  case 'mapillary_url': break;
                   case 'amenity': drkbl = true;break;
                   case 'drinking_water': drkbl = true;break;
                   case 'natural': if (t == 'spring') spring = true;break;
@@ -3286,7 +3284,7 @@
 
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-        if (timezone === "" || !timezone) {
+        if (timezone === '' || !timezone) {
           return null;
         }
 
