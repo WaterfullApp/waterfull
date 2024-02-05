@@ -196,7 +196,7 @@
     display: none;
   }
   .live-button img:hover{
-    filter: invert(100%);
+    filter: contrast(90%);
   }
   .live-button img{
     margin: 0.5em;
