@@ -11,18 +11,37 @@ export default {
     }
   },
   mounted() {
-    this.getHP()
-  },
-  updated() {
-    this.getHP()
-  },
-  
-  beforeMount() {
-    if(this.$route.path === '/') {
+    this.$nextTick(async function() {
+      await this.router.isReady()
+      if(this.router.currentRoute.path === '/') {
           this.isActive= false
         } else {
           this.isActive= true
         }
+    })
+    this.getHP()
+  },
+  updated() {
+    this.$nextTick(async function() {
+      await this.router.isReady()
+      if(this.router.currentRoute.path === '/') {
+          this.isActive= false
+        } else {
+          this.isActive= true
+        }
+    })
+    this.getHP()
+  },
+  
+  beforeMount() {
+    this.$nextTick(async function() {
+      await this.router.isReady()
+      if(this.router.currentRoute.path === '/') {
+          this.isActive= false
+        } else {
+          this.isActive= true
+        }
+    })
   },
   methods: {
     async getHP() {
