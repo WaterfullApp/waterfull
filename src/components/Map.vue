@@ -196,7 +196,6 @@
     display: none;
   }
   .live-button img:hover{
-    cursor: pointer;
     filter: invert(100%);
   }
   .live-button {
@@ -208,6 +207,7 @@
     font-family: monospace;
     font-weight: bold;
     font-size: medium;
+    cursor: pointer;
   }
   .anim img {
     margin: 0.7em;
