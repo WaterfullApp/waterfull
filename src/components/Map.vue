@@ -391,7 +391,6 @@
             celll[3] = drkbl
             celll[4] = spring
             celll[5] = tap
-            console.log(celll)
             this.markersP.push(celll)
           }
           if (typeof this.$refs.xtraG != 'undefined') {
