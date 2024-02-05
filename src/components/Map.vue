@@ -251,8 +251,8 @@
         },
         zoom: 8,
         styleObject: {
-          height: window.innerHeight - 250 + 'px',
-          width: window.innerWidth - 50 + 'px',
+          height: '450px',
+          width: '250px',
         },
       }
     },
