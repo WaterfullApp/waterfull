@@ -1,6 +1,5 @@
 <template>
     <div class="justify-center flex">
-      {{ debug }}
       <l-map
         @update:bounds="xtra()"
         ref="map"
@@ -285,7 +284,6 @@
     },
     data() {
       return {
-        debug: 'init',
         watch: null,
         counter: 4,
         iconSizeL: [24, 24],
