@@ -347,7 +347,9 @@
         this.$refs.alertBox.textContent = ''
       },
       description(item) {
-        this.$refs.descrBox.textContent = item
+        if (this.$refs.descrBox.textContent == '') {
+          this.$refs.descrBox.textContent = item
+        }
       },
       alert(item) {
         if (this.$refs.alertBox.textContent == '') {
