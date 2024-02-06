@@ -50,6 +50,7 @@
             v-for="marker in markers"
             :key="marker[7]"
             visible
+            @click="reset()"
             :lat-lng="marker[4][1]"
           >
             <l-icon :icon-url="iconU" :icon-size="iconSize"
@@ -105,6 +106,7 @@
           <l-marker
             v-for="marker in markersP" ref="xtraG"
             visible
+            @click="reset()"
             :lat-lng="marker[0]"
           >
             <l-icon :icon-url="iconLight" :icon-size="iconSize"
@@ -348,13 +350,11 @@
         this.$refs.descrBox.textContent = item
       },
       alert(item) {
-        let text = ''
-        for (let e of item) {
-          //text += e + '\n'
-          this.$refs.alertBox.textContent += e+'\r\n'
+        if (this.$refs.alertBox.textContent == '') {
+          for (let e of item) {
+            this.$refs.alertBox.textContent += e+'\r\n'
+          }
         }
-        //alert(text)
-        
       },
       async xtra() {
         this.counter++
