@@ -124,7 +124,12 @@
                   <img class="pict" src="../assets/steps/tap.svg" />
                 </div>
               <h1 style="font-size: 1em; margin-top: 1em;">{{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}</h1>
-              <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1]">{{tag}}</h1>
+              <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1].slice(0,3)">{{tag}}</h1>
+              <div v-if="marker[1].length > 3">
+                <div class='my-4' @click="alert(marker[1])">
+                  <button class="popup-map bg-white hover:bg-gray-100 text-gray-800 py-1 px-4 border border-gray-600 rounded shadow"><span>{{ $t('map.more') }}</span></button>
+                </div>
+              </div>
             </l-popup>
           </l-marker>
         </l-marker-cluster-group>
@@ -262,6 +267,7 @@
   import { LMap, LMarker, LTileLayer, LPopup, LIcon, LControl, LFeatureGroup, LControlLayers } from '@vue-leaflet/vue-leaflet'
   import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch'
   import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
+import { getTransitionRawChildren } from 'vue'
   const provider = new OpenStreetMapProvider();
   const SearchControl = new GeoSearchControl({
     provider: provider,
@@ -327,6 +333,13 @@
       navigator.geolocation.clearWatch(this.watch)
     },
     methods: {
+      alert(item) {
+        let text = ''
+        for (let e of item) {
+          text += e + '\n\n'
+        }
+        alert(text)
+      },
       async xtra() {
         this.counter++
         if (this.counter > 2) {

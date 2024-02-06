@@ -18,7 +18,8 @@
   "map": {
     "drinkable": "Potable",
     "notdrinkable": "No Potable",
-    "locate-me": "Localizarme"
+    "locate-me": "Localizarme",
+    "more": "Mostrar Más"
   },
   "addSteps": {
     "step1": {
