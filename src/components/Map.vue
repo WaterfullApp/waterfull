@@ -114,7 +114,7 @@
             <l-popup class="t-4">
               <div v-for="item in marker[2]">
                 <img
-                  v-if="item.substring(0, 4) == 'http'"
+                  v-if="item.substring(0, 4) == 'http' && item.substring(0, 15) != 'https://flic.kr'"
                   class="photo"
                   v-bind:src="item"
                 />
