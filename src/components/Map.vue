@@ -114,9 +114,10 @@
             <l-popup class="t-4">
               <div v-for="item in marker[2]">
                 <img
-                  v-if="item.substring(0, 4) == 'http' && item.substring(0, 15) != 'https://flic.kr'"
+                  v-if="item.substring(0, 4) == 'http'"
                   class="photo"
-                  v-bind:src="item"
+                  :src="imageUrl || item"
+                  @error="imageUrl='https://cdn-icons-png.flaticon.com/512/12696/12696524.png'"
                 />
               </div>
               <div
@@ -270,6 +271,7 @@
   }
   </style>
   <script>
+  import logoUrl from '../assets/logo.svg'
   import imgUrl from '../assets/marker.svg'
   import imgUrlLight from '../assets/markerLight.svg'
   import 'leaflet/dist/leaflet.css'
