@@ -42,7 +42,8 @@
       "text1": "Upload a picture"
     },
     "step6": {
-      "text1": "Description"
+      "text1": "Description",
+      "send": "SEND"
     },
     "finalStep1": "Thank you!",
     "finalStep2": "It will be very helpfull"

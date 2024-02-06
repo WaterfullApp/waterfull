@@ -55,13 +55,12 @@ export default {
           </router-link>
         </h2>
         <h2 class="mx-2 mb-8 uppercase whitespace-nowrap">
-          <a
+          <router-link
             class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white"
-            href="https://waterfull.netlify.app/en/add"
-            target="_blank"
+            to="/add"
           >
-            {{ $t('nav.add') + '(v-1)' }}
-        </a>
+            {{ $t('nav.add') }}
+          </router-link>
         </h2>
       </div>
     </div>

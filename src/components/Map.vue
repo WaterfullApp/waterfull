@@ -57,7 +57,7 @@
             :icon-anchor="iconAnchor"></l-icon>
             <l-popup class="popup-map t-4">
               <img
-                v-if="marker[5].substring(0, 4) == 'http'"
+                v-if="marker[5].substring(0, 4) == 'http' || marker[5].substring(0, 4) == 'data' "
                 class="photo"
                 v-bind:src="marker[5]"
               />
@@ -271,7 +271,6 @@
   }
   </style>
   <script>
-  import logoUrl from '../assets/logo.svg'
   import imgUrl from '../assets/marker.svg'
   import imgUrlLight from '../assets/markerLight.svg'
   import 'leaflet/dist/leaflet.css'
@@ -325,7 +324,7 @@
           url:
             'https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=69395f3e86cf4d3c8d8c87f08060ca6b',
         },
-        zoom: 8,
+        zoom: 9,
         styleObject: {
           height: window.innerHeight - 250 + 'px',
           width: window.innerWidth - 50 + 'px',

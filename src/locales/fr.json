@@ -42,7 +42,8 @@
       "text1": "Télécharge une photo"
     },
     "step6": {
-      "text1": "Description"
+      "text1": "Description",
+      "send": "SEND"
     },
     "finalStep1": "Merci!",
     "finalStep2": "Cela sera d'une très grande aide"

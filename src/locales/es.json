@@ -42,7 +42,8 @@
       "text1": "Subir una imágen"
     },
     "step6": {
-      "text1": "Descripción"
+      "text1": "Descripción",
+      "send": "SEND"
     },
     "finalStep1": "¡Gracias!",
     "finalStep2": "Será de gran ayuda"
