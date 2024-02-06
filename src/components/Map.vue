@@ -131,7 +131,7 @@
                 >
                   <img class="pict" src="../assets/steps/tap.svg" />
                 </div>
-              <h1 v-if="marker[6] != ''" style="font-size: 1em; margin-top: 1em;">{{ marker[6] }}</h1>
+              <h1 class="text-xs" v-if="marker[6] != ''" style="margin-top: 0.3em;">{{ marker[6] }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;">{{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1].slice(0,2)">{{tag}}</h1>
               <div v-if="marker[1].length > 2">
