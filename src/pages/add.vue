@@ -53,13 +53,13 @@
   </template>
   
   <script>
-  import step1 from '../components/step1.vue'
-  import step2 from '../components/step2.vue'
-  import step3 from '../components/step3.vue'
-  import step4 from '../components/step4.vue'
-  import step5 from '../components/step5.vue'
-  import step6 from '../components/step6.vue'
-  import step7 from '../components/step7.vue'
+  import Step1 from '../components/Step1'
+  import Step2 from '../components/Step2'
+  import Step3 from '../components/Step3'
+  import Step4 from '../components/Step4'
+  import Step5 from '../components/Step5'
+  import Step6 from '../components/Step6'
+  import Step7 from '../components/Step7'
   
   export default {
     updated() {
@@ -68,13 +68,13 @@
       }
     },
     components: {
-      step1,
-      step2,
-      step3,
-      step4,
-      step5,
-      step6,
-      step7,
+      Step1,
+      Step2,
+      Step3,
+      Step4,
+      Step5,
+      Step6,
+      Step7,
     },
     created() {
       window.addEventListener('resize', this.resizeEvent)
