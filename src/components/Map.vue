@@ -131,6 +131,7 @@
                 >
                   <img class="pict" src="../assets/steps/tap.svg" />
                 </div>
+              <h1 v-if="marker[6] != ''" style="font-size: 1em; margin-top: 1em;">{{ marker[6] }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;">{{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1].slice(0,2)">{{tag}}</h1>
               <div v-if="marker[1].length > 2">
@@ -391,12 +392,16 @@
             let drkbl = false
             let spring = false
             let tap = false
+            let name = ''
             for (let [k, t] of Object.entries(marker.tags)) {
-              if (k != 'name' && k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'mapillary_url' && k != 'amenity' && k != 'drinking_water' && k != 'natural' && k != 'man_made') {
+              if (k != 'name:'+this.$i18n.availableLocales[2] && k != 'name:'+this.$i18n.availableLocales[1] && k != 'name:'+this.$i18n.availableLocales[0] && k != 'name' && k != 'image' && k != 'image:0' && k != 'image:1' && k != 'mapillary' && k != 'mapillary_url' && k != 'amenity' && k != 'drinking_water' && k != 'natural' && k != 'man_made') {
                 cell.push(k+': '+t)
               } else {
                 switch (k) {
-                  case 'name':  cell.push(t);break;
+                  case 'name:'+this.$i18n.availableLocales[2]: if(this.$i18n.availableLocales[2] == this.$i18n.locale)name = t;break;
+                  case 'name:'+this.$i18n.availableLocales[1]: if(this.$i18n.availableLocales[1] == this.$i18n.locale)name = t;break;
+                  case 'name:'+this.$i18n.availableLocales[0]: if(this.$i18n.availableLocales[0] == this.$i18n.locale)name = t;break;
+                  case 'name': name = t;break;
                   case 'image': img.push(t);break;
                   case 'image:0': break;
                   case 'image:1': break;
@@ -419,6 +424,7 @@
             celll[3] = drkbl
             celll[4] = spring
             celll[5] = tap
+            celll[6] = name
             this.markersP.push(celll)
           }
           if (typeof this.$refs.xtraG != 'undefined') {
