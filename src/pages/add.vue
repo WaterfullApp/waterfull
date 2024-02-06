@@ -53,13 +53,13 @@
   </template>
   
   <script>
-  import Step1 from './components/Step1'
-  import Step2 from './components/Step2'
-  import Step3 from './components/Step3'
-  import Step4 from './components/Step4'
-  import Step5 from './components/Step5'
-  import Step6 from './components/Step6'
-  import Step7 from './components/Step7'
+  import Step1 from '../components/Step1.vue'
+  import Step2 from '../components/Step2.vue'
+  import Step3 from '../components/Step3.vue'
+  import Step4 from '../components/Step4.vue'
+  import Step5 from '../components/Step5.vue'
+  import Step6 from '../components/Step6.vue'
+  import Step7 from '../components/Step7.vue'
   
   export default {
     updated() {
