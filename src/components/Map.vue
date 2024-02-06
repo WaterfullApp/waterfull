@@ -1,7 +1,7 @@
 <template>
     <div class="justify-center flex">
       <l-map
-        @click="this.$refs.alertBox.textContent = ''"
+        @click="reset()"
         @update:bounds="xtra()"
         ref="map"
         v-bind:style="styleObject"
@@ -143,6 +143,7 @@
       </l-map>
     </div>
     <div class='text-white live-button' style='white-space: pre' ref="alertBox"></div>
+    <div class='text-white live-button' ref="descrBox"></div>
   </template>
   <style scoped>
   .is-active {
@@ -339,8 +340,12 @@
       navigator.geolocation.clearWatch(this.watch)
     },
     methods: {
+      reset() {
+        this.$refs.descrBox.textContent = ''
+        this.$refs.alertBox.textContent = ''
+      },
       description(item) {
-        this.$refs.alertBox.textContent = item
+        this.$refs.descrBox.textContent = item
       },
       alert(item) {
         let text = ''
