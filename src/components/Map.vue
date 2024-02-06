@@ -1,6 +1,7 @@
 <template>
     <div class="justify-center flex">
       <l-map
+        @click="this.$refs.alertBox.textContent = ''"
         @update:bounds="xtra()"
         ref="map"
         v-bind:style="styleObject"
@@ -88,6 +89,11 @@
               <h1>
                 {{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}
               </h1>
+              <div v-if="marker[6].length > 3">
+                <div class='my-4' @click="description(marker[6])">
+                  <button class="popup-map bg-white hover:bg-gray-100 text-gray-800 py-1 px-4 border border-gray-600 rounded shadow"><span>{{ $t('map.more') }}</span></button>
+                </div>
+              </div>
             </l-popup>
           </l-marker>
         </l-marker-cluster-group>
@@ -124,9 +130,9 @@
                   <img class="pict" src="../assets/steps/tap.svg" />
                 </div>
               <h1 style="font-size: 1em; margin-top: 1em;">{{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}</h1>
-              <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1].slice(0,3)">{{tag}}</h1>
-              <div v-if="marker[1].length > 3">
-                <div class='my-4' @click="alert(marker[1])">
+              <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1].slice(0,2)">{{tag}}</h1>
+              <div v-if="marker[1].length > 2">
+                <div class='my-4' @click="alert(marker[1].slice(2))">
                   <button class="popup-map bg-white hover:bg-gray-100 text-gray-800 py-1 px-4 border border-gray-600 rounded shadow"><span>{{ $t('map.more') }}</span></button>
                 </div>
               </div>
@@ -136,6 +142,7 @@
       </l-feature-group>
       </l-map>
     </div>
+    <div class='text-white live-button' style='white-space: pre' ref="alertBox"></div>
   </template>
   <style scoped>
   .is-active {
@@ -267,7 +274,6 @@
   import { LMap, LMarker, LTileLayer, LPopup, LIcon, LControl, LFeatureGroup, LControlLayers } from '@vue-leaflet/vue-leaflet'
   import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch'
   import { LMarkerClusterGroup } from 'vue-leaflet-markercluster'
-import { getTransitionRawChildren } from 'vue'
   const provider = new OpenStreetMapProvider();
   const SearchControl = new GeoSearchControl({
     provider: provider,
@@ -333,12 +339,17 @@ import { getTransitionRawChildren } from 'vue'
       navigator.geolocation.clearWatch(this.watch)
     },
     methods: {
+      description(item) {
+        this.$refs.alertBox.textContent = item
+      },
       alert(item) {
         let text = ''
         for (let e of item) {
-          text += e + '\n\n'
+          //text += e + '\n'
+          this.$refs.alertBox.textContent += e+'\r\n'
         }
-        alert(text)
+        //alert(text)
+        
       },
       async xtra() {
         this.counter++
