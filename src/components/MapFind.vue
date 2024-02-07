@@ -446,8 +446,20 @@
         }
       },
       async startInit() {
-        let res = await fetch('/api/getMarkers')
+        let res = await fetch('https://still-reaches-12723.herokuapp.com/https://waterfull.netlify.app/api/getMarkers')
         let data = await res.json()
+        for(let i in data.data) {
+          console.log(data.data[i].data.content)
+          fetch('/api/posts', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              content: data.data[i].data.content,
+            }),
+          })
+        }
         let listMarkers = Object.values(data.data.reverse())
         for (let marker of listMarkers) {
           let inside = Object.values(marker.data.content)
