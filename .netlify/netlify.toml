@@ -1,3 +1,5 @@
+functionsDirectory = "C:\\Users\\LaNeDev\\Dev\\waterfull-app\\functions"
+functionsDirectoryOrigin = "ui"
 redirectsOrigin = "config"
 plugins = []
 headers = []
@@ -11,6 +13,7 @@ publish = "C:\\Users\\LaNeDev\\Dev\\waterfull-app\\dist"
 publishOrigin = "ui"
 command = "npm run build"
 commandOrigin = "ui"
+functions = "C:\\Users\\LaNeDev\\Dev\\waterfull-app\\functions"
 
 [build.environment]
 
