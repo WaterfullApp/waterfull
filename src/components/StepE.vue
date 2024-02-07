@@ -70,7 +70,7 @@ export default {
     return {
       choice: '',
       activeTab: 0,
-      images: '/',
+      images: '',
       hiddenTrig: '',
     }
   },
