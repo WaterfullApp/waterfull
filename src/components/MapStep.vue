@@ -24,7 +24,7 @@
       <l-control-layers 
         position="topright"
         :collapsed="false"
-        :sort-layers="true">
+        :sort-layers="false">
       </l-control-layers>
       <l-control position="bottomright">
         <div
@@ -53,6 +53,63 @@
       <l-marker-cluster-group :maxClusterRadius="maxClusterR">
         <l-marker
           v-for="marker in markers"
+          :key="marker[7]"
+          visible
+          @click="reset()"
+          :lat-lng="marker[4][1]"
+        >
+          <l-icon :icon-url="iconU" :icon-size="iconSize"
+          :icon-anchor="iconAnchor"></l-icon>
+          <l-popup class="popup-map t-4">
+            <img
+              v-if="marker[5].substring(0, 4) == 'http'"
+              class="photo"
+              v-bind:src="marker[5]"
+            />
+            <div class="flex flex-row justify-center">
+              <div
+                v-bind:class="marker[1][0] ? '' : 'd-none'"
+                class="gradient-round"
+              >
+                <img class="pict" src="../assets/steps/walk.svg" />
+              </div>
+              <div
+                v-bind:class="marker[1][1] ? '' : 'd-none'"
+                class="gradient-round"
+              >
+                <img class="pict" src="../assets/steps/car.svg" />
+              </div>
+              <div
+                v-bind:class="marker[2] ? '' : 'd-none'"
+                class="gradient-round"
+              >
+                <img class="pict" src="../assets/steps/tap.svg" />
+              </div>
+              <div
+                v-bind:class="marker[2] ? 'd-none' : ''"
+                class="gradient-round"
+              >
+                <img class="pict" src="../assets/steps/source.svg" />
+              </div>
+            </div>
+            <h1>
+              {{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}
+            </h1>
+            <div v-if="marker[6].length > 3">
+              <div class='my-4' @click="description(marker[6])">
+                <button class="popup-map bg-white hover:bg-gray-100 text-gray-800 py-1 px-4 border border-gray-600 rounded shadow"><span>{{ $t('map.more') }}</span></button>
+              </div>
+            </div>
+          </l-popup>
+        </l-marker>
+      </l-marker-cluster-group>
+    </l-feature-group>
+    <l-feature-group 
+      layer-type="overlay"
+      :name="$t('map.notdrinkable')">
+      <l-marker-cluster-group :maxClusterRadius="maxClusterR">
+        <l-marker
+          v-for="marker in markers2"
           :key="marker[7]"
           visible
           @click="reset()"
@@ -317,6 +374,7 @@ export default {
       liveActivated: true,
       maxClusterR: 70,
       markers: [],
+      markers2: [],
       markersP: [],
       iconU: imgUrl,
       iconLight: imgUrlLight,
@@ -479,7 +537,11 @@ export default {
       for (let marker of listMarkers) {
         let inside = Object.values(marker.data.content)
         inside.unshift(0)
-        this.markers.push(inside)
+        if (inside[3]) (
+          this.markers.push(inside)
+        ); else {
+          this.markers2.push(inside)
+        }
       }
         if (navigator.geolocation) {
           this.watch = navigator.geolocation.watchPosition(pos => {
