@@ -10,6 +10,11 @@
           position.lat || userLocation.lat,
           position.lng || userLocation.lng,
         ]"
+        :maxBounds="[[-90,-180],   [90,180]]"
+        :maxBoundsViscosity="1.0"
+        :inertia="true"
+        :inertia-max-speed="0"
+        :inertiaDeceleration="1"
       >
         <l-tile-layer
           :url="tileProvider.url"
