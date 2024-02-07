@@ -439,7 +439,7 @@
             {
               method: 'POST',
               body: 'data='+ encodeURIComponent(`
-                [timeout:6]
+                [timeout:1]
                 [out:json];
                 (
                 node[amenity=drinking_water]`+bounds+`;
