@@ -23,7 +23,7 @@
         <l-control position="bottomright">
           <div
           :class="liveActivated ? 'anim' : 'is-active'"
-          class="live-button"
+          class="live-button border border-2 border-gray-400 rounded-md p-1.5 drop-shadow-md bg-white"
           @click="liveActivated = !liveActivated"
           >
             <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1783/1783356.png" alt="" />
@@ -182,7 +182,6 @@
     margin: 0.5em;
   }
   .live-button {
-    margin: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
