@@ -20,7 +20,7 @@
           :collapsed="false"
           :sort-layers="true">
         </l-control-layers>
-        <l-control position="topright">
+        <l-control position="bottomright">
           <div
           :class="liveActivated ? 'anim' : 'is-active'"
           class="live-button"
@@ -146,8 +146,8 @@
       </l-feature-group>
       </l-map>
     </div>
-    <div class='text-white live-button' style='white-space: pre' ref="alertBox"></div>
-    <div class='text-white live-button' ref="descrBox"></div>
+    <div :class="alertBoxState ? '' : 'd-none'" class='font-mono text-white w-80 border border-gray-600 rounded p-2 m-4 whitespace-pre-wrap' ref="alertBox"></div>
+    <div :class="descriptionBoxState ? '' : 'd-none'" class='font-mono text-white w-80 border border-gray-600 rounded p-2 m-4 whitespace-pre-wrap'  ref="descrBox"></div>
   </template>
   <style scoped>
   .is-active {
@@ -300,6 +300,8 @@
     },
     data() {
       return {
+        alertBoxState: false,
+        descriptionBoxState: false,
         watch: null,
         counter: 4,
         iconSizeL: [24, 24],
@@ -347,13 +349,17 @@
       reset() {
         this.$refs.descrBox.textContent = ''
         this.$refs.alertBox.textContent = ''
+        this.descriptionBoxState = false
+        this.alertBoxState = false
       },
       description(item) {
+        this.descriptionBoxState = true
         if (this.$refs.descrBox.textContent == '') {
           this.$refs.descrBox.textContent = item
         }
       },
       alert(item) {
+        this.alertBoxState = true
         if (this.$refs.alertBox.textContent == '') {
           for (let e of item) {
             this.$refs.alertBox.textContent += e+'\r\n'

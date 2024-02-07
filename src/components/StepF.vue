@@ -14,7 +14,7 @@
       <a @click.prevent="goToStep(5)" ref="previous" href="/"
         ><img class="steparr w-16" src="../assets/previous.svg" alt="previous"
       /></a>
-      <a class="steparr p-5 text-black font-black" style="width: 5em;height: 5em;" @click.prevent="goToStep(7)" ref="next" href="/"
+      <a class="send p-5 mx-8 text-black font-mono text-lg font-bold border-4 border-gray-400 rounded-full w-20 h-20" @click.prevent="goToStep(7)" ref="next" href="/"
         >{{ $t('addSteps.step6.send') }}</a>
     </div>
   </div>
@@ -34,6 +34,14 @@
 a, img:hover {
   animation: pulse 0.1s linear;
 }
+.send {
+  background: rgb(199, 233, 228);
+  background: radial-gradient(
+    circle,
+    rgba(199, 233, 228, 1) 20%,
+    rgb(0, 47, 75) 67%
+  );
+}
 .steparr {
   border: 0.1em solid #f7f7f7;
   border-radius: 100%;
@@ -50,7 +58,7 @@ a, img:hover {
 img:hover {
   cursor: pointer;
 }
-span,img {
+img {
   margin: 1em;
   border-radius: 100%;
 }
