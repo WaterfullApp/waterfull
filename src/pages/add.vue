@@ -53,28 +53,12 @@
   </template>
   
   <script>
-  import Step1 from '../components/Step1.vue'
-  import Step2 from '../components/Step2.vue'
-  import Step3 from '../components/Step3.vue'
-  import Step4 from '../components/Step4.vue'
-  import Step5 from '../components/Step5.vue'
-  import Step6 from '../components/Step6.vue'
-  import Step7 from '../components/Step7.vue'
   
   export default {
     updated() {
       if (this.currentStep === 7) {
         this.update()
       }
-    },
-    components: {
-      Step1,
-      Step2,
-      Step3,
-      Step4,
-      Step5,
-      Step6,
-      Step7,
     },
     created() {
       window.addEventListener('resize', this.resizeEvent)

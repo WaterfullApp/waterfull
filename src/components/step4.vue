@@ -55,11 +55,7 @@ img {
 }
 </style>
 <script>
-import MapStep from '../components/MapStep.vue'
 export default {
-  components: {
-    MapStep,
-  },
   props: ['choice'],
   created() {
     if (
