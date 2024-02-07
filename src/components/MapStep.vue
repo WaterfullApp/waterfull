@@ -27,8 +27,7 @@
         class="live-button border border-2 border-gray-400 rounded-md p-1.5 drop-shadow-md bg-white"
         @click="liveActivated = !liveActivated"
         >
-          <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1783/1783356.png" alt="" />
-          <h1>{{ $t('map.locate-me') }}</h1>
+          <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1679/1679916.png" alt="" />
         </div>
       </l-control>
       <l-marker ref="liveMarker"
