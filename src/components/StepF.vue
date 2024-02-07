@@ -14,7 +14,7 @@
       <a @click.prevent="goToStep(5)" ref="previous" href="/"
         ><img class="steparr w-16" src="../assets/previous.svg" alt="previous"
       /></a>
-      <a class="steparr p-5 text-black font-black" style="width: 5em;" @click.prevent="goToStep(7)" ref="next" href="/"
+      <a class="steparr p-5 text-black font-black" style="width: 5em;height: 5em;" @click.prevent="goToStep(7)" ref="next" href="/"
         >{{ $t('addSteps.step6.send') }}</a>
     </div>
   </div>
