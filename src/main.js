@@ -11,13 +11,13 @@ import Find from './pages/find.vue'
 import Add from './pages/add.vue'
 import MapFind from './components/MapFind.vue'
 import MapStep from './components/MapStep.vue'
-import Step1 from './components/Step1.vue'
-import Step2 from './components/Step2.vue'
-import Step3 from './components/Step3.vue'
-import Step4 from './components/Step4.vue'
-import Step5 from './components/Step5.vue'
-import Step6 from './components/Step6.vue'
-import Step7 from './components/Step7.vue'
+import StepA from './components/StepA.vue'
+import StepB from './components/StepB.vue'
+import StepC from './components/StepC.vue'
+import StepD from './components/StepD.vue'
+import StepE from './components/StepE.vue'
+import StepF from './components/StepF.vue'
+import StepG from './components/StepG.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -40,13 +40,13 @@ const i18n = createI18n({
 const app = createApp(App)
 app.component('MapFind', MapFind)
 app.component('MapStep', MapStep)
-app.component('Step1', Step1)
-app.component('Step2', Step2)
-app.component('Step3', Step3)
-app.component('Step4', Step4)
-app.component('Step5', Step5)
-app.component('Step6', Step6)
-app.component('Step7', Step7)
+app.component('StepA', StepA)
+app.component('StepB', StepB)
+app.component('StepC', StepC)
+app.component('StepD', StepD)
+app.component('StepE', StepE)
+app.component('StepF', StepF)
+app.component('StepG', StepG)
 app.use(router).use(i18n).mount("#app")
 
 

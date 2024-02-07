@@ -7,43 +7,43 @@
         <div
           class="justify-center lg:flex-grow md:w-1/2 flex flex-col mb-16 md:mb-0 items-center text-center"
         >
-          <Step1
+          <StepA
             v-bind:choice="choice"
             v-on:choice="choice[1] = $event"
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 1"
           />
-          <Step2
+          <StepB
             v-bind:choice="choice"
             v-on:choice="choice[2] = $event"
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 2"
           />
-          <Step3
+          <StepC
             v-bind:choice="choice"
             v-on:choice="choice[3] = $event"
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 3"
           />
-          <Step4
+          <StepD
             v-bind:choice="choice"
             v-on:choice="choice[4] = $event"
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 4"
           />
-          <Step5
+          <StepE
             v-bind:choice="choice"
             v-on:choice="choice[5] = $event"
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 5"
           />
-          <Step6
+          <StepF
             v-bind:choice="choice"
             v-on:choice="choice[6] = $event"
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 6"
           />
-          <Step7
+          <StepG
             v-on:currentStepUp="currentStep = $event"
             v-if="currentStep == 7"
           />
