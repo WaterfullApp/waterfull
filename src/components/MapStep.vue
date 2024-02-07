@@ -473,7 +473,7 @@ export default {
       }
     },
     async startInit() {
-      let res = await fetch('https://still-reaches-12723.herokuapp.com/https://waterfull.netlify.app/api/getMarkers')
+      let res = await fetch('/api/getMarkers')
       let data = await res.json()
       let listMarkers = Object.values(data.data.reverse())
       for (let marker of listMarkers) {

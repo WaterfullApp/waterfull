@@ -72,7 +72,7 @@
     },
     methods: {
       update() {
-        fetch('https://still-reaches-12723.herokuapp.com/https://waterfull.netlify.app/api/posts', {
+        fetch('/api/posts', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
