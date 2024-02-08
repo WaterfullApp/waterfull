@@ -89,7 +89,7 @@ export default {
     },
     async imgur() {
       this.hiddenTrig = 'hidden'
-      await fetch(`https://api.imgur.com/1/image.json`, {
+      await fetch(`https://api.imgur.com/3/image.json`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
