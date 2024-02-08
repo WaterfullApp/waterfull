@@ -16,7 +16,7 @@
         ><img class="steparr w-16" src="../assets/previous.svg" alt="previous"
       /></a>
       <a @click.prevent="goToStep(6)" ref="next" href="/"
-        ><img class="steparr w-16" src="../assets/next.svg" alt="next"
+        ><img class="steparr w-24" src="../assets/next.svg" alt="next"
       /></a>
     </div>
   </div>
