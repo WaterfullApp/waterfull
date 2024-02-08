@@ -504,7 +504,14 @@
         }
       },
       async startInit() {
-        let res = await fetch('/api/getMarkers', {headers: {'X-API-Key': import.meta.env.VITE_X_API_KEY}})
+
+        let key = import.meta.env.VITE_X_API_KEY.replace('/[A-Z]/g', letter => 
+          String.fromCharCode(
+            (letter.charCodeAt() - 'a'.charCodeAt() + 7) % 26 + 'a'.charCodeAt()
+          )
+        );
+        console.log(key)
+        let res = await fetch('/api/getMarkers', {headers: {'X-API-Key': key}})
         let data = await res.json()
         let listMarkers = Object.values(data.data.reverse())
         for (let marker of listMarkers) {
