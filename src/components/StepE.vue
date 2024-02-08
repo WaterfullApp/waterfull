@@ -9,7 +9,7 @@
       @change="handleImages($event)"
       accept="image/*"
       />
-      <img :src="images"/>
+      <img :src="display"/>
     </div>
     <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-8">
       <a @click.prevent="goToStep(4)" ref="previous" href="/"
@@ -70,6 +70,7 @@ export default {
       choice: '',
       activeTab: 0,
       images: '',
+      display: '',
       hiddenTrig: '',
     }
   },
@@ -81,14 +82,15 @@ export default {
     },
     handleImages(files) {
       this.images = files
-      /* const reader = new FileReader
+      const reader = new FileReader
       reader.onload = e => {
-        this.images = e.target.result
+        this.display = e.target.result
       }
-      reader.readAsDataURL(files.target.files[0]) */
+      reader.readAsDataURL(files.target.files[0])
     },
     async imgur() {
       this.hiddenTrig = 'hidden'
+      console.log(this.images)
       await fetch(`https://api.imgur.com/3/image.json`, {
         method: 'POST',
         headers: {
