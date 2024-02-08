@@ -359,6 +359,7 @@
     },
     data() {
       return {
+        limitLogs: true,
         alertBoxState: false,
         descriptionBoxState: false,
         watch: null,
@@ -529,6 +530,21 @@
                 }
                 this.opacity = 1
                 this.zoom = 18
+                if (this.limitLogs) {
+                  fetch('/api/logs', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      latlng: [this.userLocation.lat, this.userLocation.lng],
+                      timestamp: Date.now(),
+                      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                      locale: Intl.DateTimeFormat().resolvedOptions().locale
+                    }),
+                  })
+                  this.limitLogs = false 
+                }
               } else {
                 this.$refs.map.leafletObject.removeLayer(this.$refs.liveMarker.leafletObject)
               }
