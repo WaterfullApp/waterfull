@@ -359,6 +359,7 @@
     },
     data() {
       return {
+        limitLogs: true,
         alertBoxState: false,
         descriptionBoxState: false,
         watch: null,
@@ -529,6 +530,18 @@
                 }
                 this.opacity = 1
                 this.zoom = 18
+                if (this.userLocation != {} && this.limitLogs) {
+                  fetch('/api/logs', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      content: this.userLocation,
+                    }),
+                  })
+                  this.limitLogs = false 
+                }
               } else {
                 this.$refs.map.leafletObject.removeLayer(this.$refs.liveMarker.leafletObject)
               }
