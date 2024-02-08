@@ -511,6 +511,7 @@
             charcode = (str[i].charCodeAt()) + num;
             result += String.fromCharCode(charcode);
         }
+        
         return result;
       },
       async startInit() {
