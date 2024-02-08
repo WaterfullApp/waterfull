@@ -15,5 +15,5 @@ status = 200
 
 [[redirects]]
 from = "/*"
-to = "/"
+to = "/find"
 status = 200
