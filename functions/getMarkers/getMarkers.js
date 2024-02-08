@@ -10,7 +10,7 @@ const apiKey = process.env.psw
 const q = faunadb.query;
 
 exports.handler = async (event, context) => {
-    const requestKey = event.headers.get("X-API-Key");
+    const requestKey = event.headers
     if (apiKey === requestKey) {
         try {
             const res = await client.query(
