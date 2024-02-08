@@ -76,7 +76,7 @@ export default {
   methods: {
     async goToStep(step) {
       await this.imgur()
-      this.$emit('choice', this.images)
+      this.$emit('choice', this.choice)
       this.$emit('currentStepUp', step)
     },
     handleImages(files) {
@@ -89,13 +89,13 @@ export default {
     },
     async imgur() {
       this.hiddenTrig = 'hidden'
-      await fetch(`https://api.imgur.com/3/image.json`, {
+      await fetch(`https://api.imgur.com/1/image.json`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           Authorization: 'Client-ID 6d0ebcefb081eb1',
         },
-        body: this.images[0],
+        body: this.images,
       })
         .then(response => {
           return response.json()
