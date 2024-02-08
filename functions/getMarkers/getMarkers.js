@@ -16,7 +16,7 @@ exports.handler = async (event, context) => {
                 // get documents from collection
                 q.Paginate(
                     q.Documents(
-                        q.Collection('MarkersStaging')
+                        q.Collection('Markers')
                     )
                 ),
                 // get content of each document
