@@ -55,16 +55,6 @@
   <script>
   
   export default {
-    fhts(str, num) {
-      str = str.toLowerCase();
-      let result = '';
-      let charcode = 0;
-      for (let i = 0; i < str.length; i++) {
-          charcode = (str[i].charCodeAt()) + num;
-          result += String.fromCharCode(charcode);
-      }
-      return result;
-    },
     updated() {
       if (this.currentStep === 7) {
         this.update()
@@ -81,6 +71,16 @@
       title: 'Add',
     },
     methods: {
+      fhts(str, num) {
+        str = str.toLowerCase();
+        let result = '';
+        let charcode = 0;
+        for (let i = 0; i < str.length; i++) {
+            charcode = (str[i].charCodeAt()) + num;
+            result += String.fromCharCode(charcode);
+        }
+        return result;
+      },
       update() {
         fetch('/api/posts', {
           method: 'POST',
