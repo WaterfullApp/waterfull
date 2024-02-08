@@ -11,4 +11,10 @@ Because The Earth is full of water
 
 Let´s make it easy to get it!
 
+---
+Production URL:
 https://waterfull-v-2.netlify.app/
+
+---
+Staging URL:
+https://staging--waterfull-v-2.netlify.app/
