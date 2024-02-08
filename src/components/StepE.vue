@@ -8,7 +8,6 @@
       type="file"
       @change="handleImages($event)"
       accept="image/*"
-      capture
       />
       <img :src="images"/>
     </div>
