@@ -8,9 +8,8 @@
       type="file"
       @change="handleImages($event)"
       accept="image/*"
-      capture
       />
-      <img :src="images"/>
+      <img class='max-w-32' :src="display"/>
     </div>
     <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-8">
       <a @click.prevent="goToStep(4)" ref="previous" href="/"
@@ -71,20 +70,40 @@ export default {
       choice: '',
       activeTab: 0,
       images: '',
+      display: '',
       hiddenTrig: '',
     }
   },
   methods: {
     async goToStep(step) {
-      this.$emit('choice', this.images)
+      await this.imgur()
+      this.$emit('choice', Object.values(Object.values(this.choice)[0])[27])
       this.$emit('currentStepUp', step)
     },
     handleImages(files) {
+      this.images = files.target.files[0]
       const reader = new FileReader
       reader.onload = e => {
-        this.images = e.target.result
+        this.display = e.target.result
       }
       reader.readAsDataURL(files.target.files[0])
+    },
+    async imgur() {
+      this.hiddenTrig = 'hidden'
+      await fetch(`https://api.imgur.com/3/image.json`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'Client-ID 6d0ebcefb081eb1',
+        },
+        body: this.images,
+      })
+        .then(response => {
+          return response.json()
+        })
+        .then(data => {
+          this.choice = data
+        })
     },
   },
 }
