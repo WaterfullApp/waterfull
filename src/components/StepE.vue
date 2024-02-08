@@ -81,7 +81,7 @@ export default {
       this.$emit('currentStepUp', step)
     },
     handleImages(files) {
-      this.images = files
+      this.images = files.target.files[0]
       const reader = new FileReader
       reader.onload = e => {
         this.display = e.target.result
