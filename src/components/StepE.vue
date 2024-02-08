@@ -9,14 +9,14 @@
       @change="handleImages($event)"
       accept="image/*"
       />
-      <img class='max-w-16' :src="display"/>
+      <img class='max-w-32' :src="display"/>
     </div>
     <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-8">
       <a @click.prevent="goToStep(4)" ref="previous" href="/"
         ><img class="steparr w-16" src="../assets/previous.svg" alt="previous"
       /></a>
       <a @click.prevent="goToStep(6)" ref="next" href="/"
-        ><img class="steparr w-24" src="../assets/next.svg" alt="next"
+        ><img class="steparr w-16" src="../assets/next.svg" alt="next"
       /></a>
     </div>
   </div>
