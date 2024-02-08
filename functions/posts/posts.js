@@ -40,9 +40,7 @@ exports.handler = async (event, context) => {
     } else {
         return {
             statusCode: 500,
-            body: JSON.stringify({
-                body: 'denied'
-            })
+            body: 'DENIED'
         }
     }
 };

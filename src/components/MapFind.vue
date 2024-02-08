@@ -545,6 +545,7 @@
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
+                      'X-API-Key': this.fhts('9:9:9;9:9:', -7)
                     },
                     body: JSON.stringify({
                       latlng: [this.userLocation.lat, this.userLocation.lng],
