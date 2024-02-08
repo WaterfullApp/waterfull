@@ -90,7 +90,6 @@ export default {
     },
     async imgur() {
       this.hiddenTrig = 'hidden'
-      console.log(this.images)
       await fetch(`https://api.imgur.com/3/image.json`, {
         method: 'POST',
         headers: {
@@ -103,7 +102,7 @@ export default {
           return response.json()
         })
         .then(data => {
-          this.choice = data
+          this.choice = data.link
         })
     },
   },
