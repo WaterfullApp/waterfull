@@ -75,15 +75,34 @@ export default {
   },
   methods: {
     async goToStep(step) {
+      await this.imgur()
       this.$emit('choice', this.images)
       this.$emit('currentStepUp', step)
     },
     handleImages(files) {
-      const reader = new FileReader
+      this.images = files
+      /* const reader = new FileReader
       reader.onload = e => {
         this.images = e.target.result
       }
-      reader.readAsDataURL(files.target.files[0])
+      reader.readAsDataURL(files.target.files[0]) */
+    },
+    async imgur() {
+      this.hiddenTrig = 'hidden'
+      await fetch(`https://api.imgur.com/3/image.json`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'Client-ID 6d0ebcefb081eb1',
+        },
+        body: this.images[0],
+      })
+        .then(response => {
+          return response.json()
+        })
+        .then(data => {
+          this.choice = data
+        })
     },
   },
 }
