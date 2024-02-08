@@ -4,6 +4,16 @@ to = "/.netlify/functions/:splat"
 status = 200
 
 [[redirects]]
-from = "/*"
+from = "/find"
 to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/add"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/"
 status = 200
