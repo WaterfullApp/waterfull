@@ -530,8 +530,7 @@
                 }
                 this.opacity = 1
                 this.zoom = 18
-                console.log(this.userLocation)
-                if (this.userLocation != {} && this.limitLogs) {
+                if (this.limitLogs) {
                   fetch('/api/logs', {
                     method: 'POST',
                     headers: {
