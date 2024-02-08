@@ -102,7 +102,7 @@ export default {
           return response.json()
         })
         .then(data => {
-          this.choice = data.link
+          this.choice = data['link']
         })
     },
   },
