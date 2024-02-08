@@ -9,8 +9,22 @@ const apiKey = process.env.VITE_X_API_KEY
 // the query object provides us with functions to create a new document in the collection
 const q = faunadb.query;
 
+function fhts(str, num) {
+    // you can comment this line
+    str = str.toLowerCase();
+
+    let result = '';
+    let charcode = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        charcode = (str[i].charCodeAt()) + num;
+        result += String.fromCharCode(charcode);
+    }
+    return result;
+
+}
 exports.handler = async (event, context) => {
-    const requestKey = event.headers['x-api-key']
+    const requestKey = fhts(event.headers['x-api-key'], -7)
     return {
         statusCode: 400,
         body: JSON.stringify({

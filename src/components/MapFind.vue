@@ -503,25 +503,8 @@
           }
         }
       },
-      fhts(str, num) {
-          // you can comment this line
-          str = str.toLowerCase();
-
-          let result = '';
-          let charcode = 0;
-
-          for (let i = 0; i < str.length; i++) {
-              charcode = (str[i].charCodeAt()) + num;
-              result += String.fromCharCode(charcode);
-          }
-          return result;
-
-      },
       async startInit() {
-
-        let key = this.fhts(import.meta.env.VITE_X_API_KEY, 7)
-        console.log(key)
-        let res = await fetch('/api/getMarkers', {headers: {'X-API-Key': key}})
+        let res = await fetch('/api/getMarkers', {headers: {'X-API-Key': '9:9:9;9:9:'}})
         let data = await res.json()
         let listMarkers = Object.values(data.data.reverse())
         for (let marker of listMarkers) {
