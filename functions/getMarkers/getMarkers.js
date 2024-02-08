@@ -10,7 +10,7 @@ const apiKey = process.env.psw
 const q = faunadb.query;
 
 exports.handler = async (event, context) => {
-    const requestKey = event.headers.x-api-key
+    const requestKey = event.headers
     return {
         statusCode: 400,
         body: JSON.stringify({
