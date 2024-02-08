@@ -504,18 +504,14 @@
         }
       },
       fhts(str, num) {
-          // you can comment this line
-          str = str.toLowerCase();
-
-          let result = '';
-          let charcode = 0;
-
-          for (let i = 0; i < str.length; i++) {
-              charcode = (str[i].charCodeAt()) + num;
-              result += String.fromCharCode(charcode);
-          }
-          return result;
-
+        str = str.toLowerCase();
+        let result = '';
+        let charcode = 0;
+        for (let i = 0; i < str.length; i++) {
+            charcode = (str[i].charCodeAt()) + num;
+            result += String.fromCharCode(charcode);
+        }
+        return result;
       },
       async startInit() {
         let res = await fetch('/api/getMarkers', {headers: {'X-API-Key': this.fhts('9:9:9;9:9:', -7)}})
