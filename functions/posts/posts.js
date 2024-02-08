@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
     try {
         // create document in existing collection
         const response = await client.query(
-            q.Create(q.Collection('MarkersStaging'), {
+            q.Create(q.Collection('Markers'), {
                 data
             })
         );
