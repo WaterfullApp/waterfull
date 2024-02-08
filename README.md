@@ -1,4 +1,4 @@
-# PRODUCTION - Waterfull App
+# Waterfull App
 
 Water is a public good.
 
