@@ -366,6 +366,7 @@ export default {
   },
   data() {
     return {
+      limitLogs: true,
       alertBoxState: false,
       descriptionBoxState: false,
       watch: null,
