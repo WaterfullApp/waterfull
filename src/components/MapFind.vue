@@ -537,7 +537,10 @@
                       'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                      content: this.userLocation,
+                      latlng: [this.userLocation.lat, this.userLocation.lng],
+                      timestamp: Date.now(),
+                      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                      locale: Intl.DateTimeFormat().resolvedOptions().locale
                     }),
                   })
                   this.limitLogs = false 
