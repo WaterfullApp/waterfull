@@ -5,7 +5,7 @@ const client = new faunadb.Client({
     domain: 'db.fauna.com',
     scheme: 'https'
 });
-const apiKey = process.env.psw
+const apiKey = process.env.VITE_X_API_KEY
 // the query object provides us with functions to create a new document in the collection
 const q = faunadb.query;
 
