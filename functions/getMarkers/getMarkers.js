@@ -11,6 +11,7 @@ const q = faunadb.query;
 
 exports.handler = async (event, context) => {
     const requestKey = event.headers
+    return requestKey
     if (apiKey === requestKey) {
         try {
             const res = await client.query(
