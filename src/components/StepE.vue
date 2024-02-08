@@ -9,7 +9,7 @@
       @change="handleImages($event)"
       accept="image/*"
       />
-      <img :src="display"/>
+      <img class='max-w-16' :src="display"/>
     </div>
     <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-8">
       <a @click.prevent="goToStep(4)" ref="previous" href="/"
