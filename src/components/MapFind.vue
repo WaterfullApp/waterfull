@@ -504,7 +504,7 @@
         }
       },
       async startInit() {
-        let res = await fetch('/api/getMarkers')
+        let res = await fetch('/api/getMarkers', {headers: {'X-API-Key': process.env.psw}})
         let data = await res.json()
         let listMarkers = Object.values(data.data.reverse())
         for (let marker of listMarkers) {
