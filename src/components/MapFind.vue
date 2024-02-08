@@ -540,7 +540,8 @@
                       latlng: [this.userLocation.lat, this.userLocation.lng],
                       timestamp: Date.now(),
                       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                      locale: Intl.DateTimeFormat().resolvedOptions().locale
+                      locale: Intl.DateTimeFormat().resolvedOptions().locale,
+                      page: 'find'
                     }),
                   })
                   this.limitLogs = false 

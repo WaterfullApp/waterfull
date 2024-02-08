@@ -557,6 +557,22 @@ export default {
               }
               this.opacity = 1
               this.zoom = 18
+              if (this.limitLogs) {
+                fetch('/api/logs', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    latlng: [this.userLocation.lat, this.userLocation.lng],
+                    timestamp: Date.now(),
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    locale: Intl.DateTimeFormat().resolvedOptions().locale,
+                    page: 'add'
+                  }),
+                })
+                this.limitLogs = false 
+              }
             } else {
               this.$refs.map.leafletObject.removeLayer(this.$refs.liveMarker.leafletObject)
             }
