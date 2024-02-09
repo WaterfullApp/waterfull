@@ -35,7 +35,7 @@
         ><img class="steparr w-16" src="../assets/next.svg" alt="next"
       /></a>
     </div>
-    <p class="mb-8 leading-relaxed">
+    <p class="mb-8 text-gray-300 font-mono leading-relaxed">
       {{ $t('addSteps.step1.text2') }}
     </p>
   </div>

@@ -1,5 +1,5 @@
 <template>
-    <section class="text-gray-500 bg-gray-900 body-font">
+    <section class="text-gray-500 bg-gray-900 font-mono">
       <div
         class="container mx-auto flex justify-center flex-col items-center"
         :class="currentStep != 4 && currentStep != 5? 'px-5 py-24' : ''"
