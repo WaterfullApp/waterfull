@@ -71,6 +71,14 @@ export default {
   color: teal;
   cursor: pointer;
 }
+.hideThis {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
 </style>
 <template>
   <div class="min-h-screen bg-gray-900" id="app">
@@ -92,7 +100,7 @@ export default {
         </div>
         <div class="rounded text-white border-white">
           <div class="locale-switcher">
-            <label class="hidden" for="lang">Language</label>
+            <label class="hideThis" for="lang">Language</label>
             <select name="lang" class="no-underline inline-block text-sm px-4 py-2 leading-none border rounded mt-4 sm:mt-0" v-model="$i18n.locale">
               <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale.toUpperCase() }}</option>
             </select>
