@@ -14,6 +14,11 @@ to = "/index.html"
 status = 200
 
 [[redirects]]
+from = "/logs"
+to = "/index.html"
+status = 200
+
+[[redirects]]
 from = "/*"
 to = "https://waterfull-v-2.netlify.app/"
 status = 301

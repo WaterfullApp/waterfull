@@ -9,6 +9,7 @@ import App from './App.vue'
 import Index from './pages/index.vue'
 import Find from './pages/find.vue'
 import Add from './pages/add.vue'
+import Logs from './pages/logs.vue'
 import MapFind from './components/MapFind.vue'
 import MapStep from './components/MapStep.vue'
 import StepA from './components/StepA.vue'
@@ -18,6 +19,7 @@ import StepD from './components/StepD.vue'
 import StepE from './components/StepE.vue'
 import StepF from './components/StepF.vue'
 import StepG from './components/StepG.vue'
+import LogFind from './components/StepG.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -25,6 +27,7 @@ const router = createRouter({
       { path: '/', component: Index },
       { path: '/find', component: Find },
       { path: '/add', component: Add },
+      { path: '/logs', component: Logs },
     ]
 })
 
@@ -47,6 +50,7 @@ app.component('StepD', StepD)
 app.component('StepE', StepE)
 app.component('StepF', StepF)
 app.component('StepG', StepG)
+app.component('LogFind', LogFind)
 app.use(router).use(i18n).mount("#app")
 
 
