@@ -5,7 +5,8 @@
   "nav": {
     "home": "Home",
     "add": "Add New Source",
-    "find": "Find Water Source"
+    "find": "Find Water Source",
+    "language": "Language"
   },
   "home": {
     "text1-1": "Water is a public good.",

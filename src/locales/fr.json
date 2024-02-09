@@ -5,7 +5,8 @@
   "nav": {
     "home": "Accueil",
     "add": "Ajouter une Source",
-    "find": "Trouver une Source"
+    "find": "Trouver une Source",
+    "language": "Langue"
   },
   "home": {
     "text1-1": "L'eau est un bien public.",

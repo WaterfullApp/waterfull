@@ -71,13 +71,8 @@ export default {
   color: teal;
   cursor: pointer;
 }
-.hideThis {
-  width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+.text-xxs {
+  font-size: 0.6rem;
 }
 </style>
 <template>
@@ -99,11 +94,11 @@ export default {
           </router-link>
         </div>
         <div class="rounded text-white border-white">
-          <div class="locale-switcher">
-            <label class="hideThis" for="lang">Language</label>
+          <div class="locale-switcher items-center flex flex-col">
             <select name="lang" class="no-underline inline-block text-sm px-4 py-2 leading-none border rounded mt-4 sm:mt-0" v-model="$i18n.locale">
               <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale.toUpperCase() }}</option>
             </select>
+            <label class="font-mono text-xxs" for="lang">{{$t('nav.language')}}</label>
           </div>
         </div>
       </nav>

@@ -5,7 +5,8 @@
   "nav": {
     "home": "Inicio",
     "add": "Añadir un suministro",
-    "find": "Encontrar un suministro"
+    "find": "Encontrar un suministro",
+    "language": "Idioma"
   },
   "home": {
     "text1-1": "El agua es un bien público.",
