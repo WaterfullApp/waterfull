@@ -3,7 +3,7 @@
     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
       {{ $t('addSteps.step5.text1') }}
     </h1>
-    <div class="flex justify-center mx-auto flex-col px-1 py-0">
+    <div class="flex justify-center mx-auto flex-col px-1 py-4">
       <input class="inputfile"
       type="file" name="file" id="file"
       @change="handleImages($event)"
@@ -19,7 +19,7 @@
         <img class='w-32 h-32 object-scale-down' :src="display"/>
       </div>
     </div>
-    <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-0">
+    <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-4">
       <a @click.prevent="goToStep(4)" ref="previous" href="/"
         ><img class="steparr w-16" src="../assets/previous.svg" alt="previous"
       /></a>
