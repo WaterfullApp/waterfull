@@ -23,7 +23,7 @@
           visible
           :lat-lng="marker[0]"
         >
-          <l-icon :icon-url="iconU" :icon-size="iconSize"
+          <l-icon :icon-url="imgUrlSkin" :icon-size="iconSize"
           :icon-anchor="iconAnchor"></l-icon>
           <l-popup class="popup-map t-4">
             <h2>{{marker[1]}}</h2>
@@ -126,7 +126,7 @@
   </style>
   <script>
   import imgUrl from '../assets/marker.svg'
-  import imgUrlLight from '../assets/markerLight.svg'
+  import markerSkin from '../assets/markerSkin.svg'
   import 'leaflet/dist/leaflet.css'
   import 'leaflet-geosearch/assets/css/leaflet.css'
   import 'vue-leaflet-markercluster/dist/style.css'
@@ -166,8 +166,8 @@
         markers2: [],
         markersP: [],
         iconU: imgUrl,
-        iconLight: imgUrlLight,
-        iconSize: [32, 37],
+        imgUrlSkin: markerSkin,
+        iconSize: [42, 47],
         iconAnchor: [16, 37],
         geoSearchOptions: {
           provider: provider,
