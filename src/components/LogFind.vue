@@ -3,7 +3,7 @@
       <l-map
         ref="map"
         v-bind:style="styleObject"
-        :zoom="3"
+        :zoom="2"
         :center="[
           position.lat || userLocation.lat,
           position.lng || userLocation.lng,
