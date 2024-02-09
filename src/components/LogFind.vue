@@ -205,10 +205,13 @@
         for (let marker of listMarkers) {
           let inside = []
           inside[0] = Object.values(marker.data.latlng)
-          inside[1] = Object.values(marker.data.timestamp)
-          inside[2] = Object.values(marker.data.timezone)
-          inside[3] = Object.values(marker.data.locale)
-          inside[4] = Object.values(marker.data.page)
+          let utcSeconds = marker.data.timestamp;
+          let d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+          d.setUTCSeconds(utcSeconds);
+          inside[1] = d
+          inside[2] = marker.data.timezone
+          inside[3] = marker.data.locale
+          inside[4] = marker.data.page
           this.markers.push(inside)
         }
         console.log(this.markers)
