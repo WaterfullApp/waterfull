@@ -211,7 +211,6 @@
           inside[4] = marker.data.page
           this.markers.push(inside)
         }
-        console.log(this.markers)
       },
     },
   }
