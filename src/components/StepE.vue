@@ -4,12 +4,15 @@
       {{ $t('addSteps.step5.text1') }}
     </h1>
     <div class="flex justify-center mx-auto flex-col px-1 py-8">
-      <input
-      type="file"
+      <input class="inputfile"
+      type="file" name="file" id="file"
       @change="handleImages($event)"
       accept="image/*"
       />
-      <img class='max-w-32' :src="display"/>
+      <label class="flex justify-center" for="file"><img class='max-w-16' src="../assets/upload.jpg"/></label>
+      <div class="flex justify-center">
+        <img class='max-w-32' :src="display"/>
+      </div>
     </div>
     <div :class="hiddenTrig" class="flex justify-center mx-auto flex px-5 py-8">
       <a @click.prevent="goToStep(4)" ref="previous" href="/"
@@ -35,6 +38,14 @@
 }
 a, img:hover {
   animation: pulse 0.1s linear;
+}
+.inputfile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 .steparr {
   border: 0.1em solid #f7f7f7;
