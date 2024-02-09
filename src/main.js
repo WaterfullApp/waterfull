@@ -19,7 +19,7 @@ import StepD from './components/StepD.vue'
 import StepE from './components/StepE.vue'
 import StepF from './components/StepF.vue'
 import StepG from './components/StepG.vue'
-import LogFind from './components/StepG.vue'
+import LogFind from './components/LogFind.vue'
 
 const router = createRouter({
     history: createWebHistory(),
