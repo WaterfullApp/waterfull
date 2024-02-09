@@ -26,7 +26,7 @@
           <l-icon :icon-url="iconU" :icon-size="iconSize"
           :icon-anchor="iconAnchor"></l-icon>
           <l-popup class="popup-map t-4">
-            <h1>{{marker[1]}}</h1>
+            <h1 class="text-sm">{{marker[1]}}</h1>
             <h1>{{marker[2]}}</h1>
             <h1>{{marker[3]}}</h1>
             <h1>{{marker[4]}}</h1>
