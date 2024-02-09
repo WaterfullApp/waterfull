@@ -93,8 +93,13 @@
   .leaflet-popup-content h1 {
     filter: drop-shadow(1px 2px 2px rgb(100, 44, 71));
     max-width: 150px;
-    font-size: 60%;
-    font-weight: bold;
+    font-size: 100%;
+    font-family: monospace;
+  }
+  .leaflet-popup-content h2 {
+    filter: drop-shadow(1px 2px 2px rgb(100, 44, 71));
+    max-width: 150px;
+    font-size: 80%;
     font-family: monospace;
   }
   .photo {
