@@ -9,7 +9,7 @@
       @change="handleImages($event)"
       accept="image/*"
       />
-      <label class="flex justify-center" for="file"><img class='max-w-16' src="../assets/upload.jpg"/></label>
+      <label class="flex justify-center cursor-pointer" for="file"><img class='max-w-16 cursor-pointer' src="../assets/upload.jpg"/></label>
       <div class="flex justify-center">
         <img class='max-w-32' :src="display"/>
       </div>
