@@ -26,7 +26,7 @@
           <l-icon :icon-url="iconU" :icon-size="iconSize"
           :icon-anchor="iconAnchor"></l-icon>
           <l-popup class="popup-map t-4">
-            <h1 class="text-sm">{{marker[1]}}</h1>
+            <h2>{{marker[1]}}</h2>
             <h1>{{marker[2]}}</h1>
             <h1>{{marker[3]}}</h1>
             <h1>{{marker[4]}}</h1>
@@ -93,7 +93,7 @@
   .leaflet-popup-content h1 {
     filter: drop-shadow(1px 2px 2px rgb(100, 44, 71));
     max-width: 150px;
-    font-size: 120%;
+    font-size: 60%;
     font-weight: bold;
     font-family: monospace;
   }
