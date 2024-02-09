@@ -2,7 +2,7 @@
     <section class="text-gray-500 bg-gray-900 body-font">
       <div
         class="container mx-auto flex justify-center flex-col items-center"
-        :class="currentStep != 4 || currentStep != 5? 'px-5 py-24' : ''"
+        :class="currentStep != 4 ? 'px-5 py-24' : ''"
       >
         <div
           class="justify-center lg:flex-grow md:w-1/2 flex flex-col mb-16 md:mb-0 items-center text-center"
