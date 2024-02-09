@@ -96,6 +96,7 @@ export default {
         <div class="rounded text-white border-white">
           <div class="locale-switcher">
             <label class="font-mono text-xxs items-center flex flex-col-reverse" for="lang">
+              {{$t('nav.language')}}
               <select name="lang" class="no-underline inline-block text-sm px-4 py-2 leading-none border rounded mt-4 sm:mt-0" v-model="$i18n.locale">
                 <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale.toUpperCase() }}</option>
               </select>
