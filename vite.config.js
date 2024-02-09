@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import dns from 'dns'
 import Sitemap from 'vite-plugin-sitemap'
+const hostname='https://waterfull-v-2.netlify.app/'
 dns.setDefaultResultOrder('verbatim')
 
 export default defineConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
     VueI18nPlugin({
       include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/**'),
     }),
-    Sitemap(),
+    Sitemap({hostname}),
   ],
   server: {
     host: 'localhost',
