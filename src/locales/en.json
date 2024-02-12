@@ -20,7 +20,9 @@
     "drinkable": "Drinkable",
     "notdrinkable": "Not Drinkable",
     "locate-me": "Locate Me",
-    "more": "Show More"
+    "more": "Show More",
+    "userData": "Internal Data",
+    "openData": "External Data"
   },
   "addSteps": {
     "step1": {
@@ -37,10 +39,12 @@
       "text1": "Where is it?",
       "text2": "Current Position",
       "text3": "Address",
-      "text4": "Coordinates"
+      "text4": "Coordinates",
+      "text5": "Geo-Position of this device"
     },
     "step5": {
-      "text1": "Upload a picture"
+      "text1": "Upload a picture",
+      "text2": "Click to upload"
     },
     "step6": {
       "text1": "Description",

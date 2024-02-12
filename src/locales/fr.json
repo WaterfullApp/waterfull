@@ -20,7 +20,9 @@
     "drinkable": "Potable",
     "notdrinkable": "Non Potable",
     "locate-me": "Localise-moi",
-    "more": "Voir Plus"
+    "more": "Voir Plus",
+    "userData": "Données Internes",
+    "openData": "Données Externes"
   },
   "addSteps": {
     "step1": {
@@ -37,10 +39,12 @@
       "text1": "Où se trouve t'elle?",
       "text2": "Position Actuelle",
       "text3": "Adresse",
-      "text4": "Coordonnées"
+      "text4": "Coordonnées",
+      "text5": "Geo-Position de cet apareil"
     },
     "step5": {
-      "text1": "Télécharge une photo"
+      "text1": "Télécharge une photo",
+      "text2": "Pour l'ajouter clique ici"
     },
     "step6": {
       "text1": "Description",

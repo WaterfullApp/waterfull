@@ -48,7 +48,7 @@
         </l-marker>
         <l-feature-group 
         layer-type="overlay"
-        name="User">
+        :name="$t('map.userData')">
         <l-marker-cluster-group :maxClusterRadius="maxClusterR">
           <l-marker
             v-for="marker in markers"
@@ -161,7 +161,7 @@
       </l-feature-group>
       <l-feature-group 
         layer-type="overlay"
-        name="Open Data">
+        :name="$t('map.openData')">
         <l-marker-cluster-group :maxClusterRadius="maxClusterR" ref="newCluster">
           <l-marker
             v-for="marker in markersP" ref="xtraG"

@@ -49,7 +49,7 @@
       </l-marker>
       <l-feature-group 
       layer-type="overlay"
-      name="User">
+      :name="$t('map.userData')">
       <l-marker-cluster-group :maxClusterRadius="maxClusterR">
         <l-marker
           v-for="marker in markers"
@@ -163,7 +163,7 @@
     </l-feature-group>
     <l-feature-group 
       layer-type="overlay"
-      name="Open Data">
+      :name="$t('map.openData')">
       <l-marker-cluster-group :maxClusterRadius="maxClusterR" ref="newCluster">
         <l-marker
           v-for="marker in markersP" ref="xtraG"
@@ -211,7 +211,7 @@
     </l-marker>
     </l-map>
   </div>
-  <button @click="setToLive()" class="border border-gray-300 p-2 my-2 rounded-md ring-blue-200 bg-white">Use Locate Me</button>
+  <button @click="setToLive()" class="border border-gray-300 p-2 my-2 rounded-md ring-blue-200 bg-white">{{ $t('addSteps.step4.text5') }}</button>
     <div :class="alertBoxState ? '' : 'd-none'" class='font-mono text-white w-80 border border-gray-600 rounded p-2 m-4 whitespace-pre-wrap' ref="alertBox"></div>
     <div :class="descriptionBoxState ? '' : 'd-none'" class='font-mono text-white w-80 border border-gray-600 rounded p-2 m-4 whitespace-pre-wrap'  ref="descrBox"></div>
 </template>
