@@ -6,6 +6,7 @@ const client = new faunadb.Client({
     scheme: 'https'
 });
 const apiKey = process.env.VITE_X_API_KEY
+const collection = process.env.VITE_TABLE_MARKERS
 // the query object provides us with functions to create a new document in the collection
 const q = faunadb.query;
 
@@ -19,7 +20,7 @@ exports.handler = async (event, context) => {
                     // get documents from collection
                     q.Paginate(
                         q.Documents(
-                            q.Collection('Markers')
+                            q.Collection(collection)
                         )
                     ),
                     // get content of each document

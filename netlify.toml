@@ -20,5 +20,5 @@ status = 200
 
 [[redirects]]
 from = "/*"
-to = "https://waterfull-v-2.netlify.app/"
+to = $HOME_URL
 status = 301
