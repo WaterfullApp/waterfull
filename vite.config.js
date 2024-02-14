@@ -13,8 +13,8 @@ export default defineConfig({
       include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/**'),
     }),
     Sitemap({
-      hostname: 'https://waterfull-v-2.netlify.app/',
-      robots: [{ userAgent: '*', disallow: '/' }]
+      hostname: 'https://waterfull.org',
+      robots: [{ userAgent: '*', allow: '/*' }]
     })
   ],
   server: {
