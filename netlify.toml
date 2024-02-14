@@ -20,5 +20,5 @@ status = 200
 
 [[redirects]]
 from = "/*"
-to = $HOME_URL
+to = "$HOME_URL"
 status = 301
