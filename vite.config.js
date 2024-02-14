@@ -14,7 +14,7 @@ export default defineConfig({
     }),
     Sitemap({
       hostname: 'https://waterfull.org',
-      robots: [{ userAgent: '*', allow: '/*' }]
+      robots: [{ userAgent: '*', disallow: '' }]
     })
   ],
   server: {
