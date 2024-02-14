@@ -20,5 +20,5 @@ status = 200
 
 [[redirects]]
 from = "/*"
-to = "https://staging--waterfull-v-2.netlify.app/"
+to = "https://staging.waterfull.org/"
 status = 301
