@@ -12,18 +12,44 @@ Because The Earth is full of water
 Let´s make it easy to get it!
 
 ---
-Production URL:
-https://waterfull-v-2.netlify.app/
 
 ---
-Staging URL:
-https://staging--waterfull-v-2.netlify.app/
+- [Staging](https://staging--waterfull-v-2.netlify.app/)
 
-#
+- [Website](https://waterfull-v-2.netlify.app/)
+
+- [GitHub Repository](https://github.com/WaterfullApp/waterfull)
+
+
+
+---
+
+---
+
+## Jam - Stack : 
+
+- [Vue Js 3](https://vuejs.org/)
+- [Fauna Db](https://fauna.com/)
+- [Netlify](https://www.netlify.com/)
+- [Overpass Turbo](https://overpass-turbo.eu/)
+
+---
+
+---
+
+---
+
+
+### **_Map Page :_** 
+![Image](https://github.com/user-attachments/assets/ecb0dd8e-6152-4f81-a396-df3c2bc68ce3)
+
+---
 
 ---
 
 
 
-![Capture d'écran 2024-08-13 154720](https://github.com/user-attachments/assets/297d858a-8019-4814-9a67-ae9ebae3bb69)
-![Capture d'écran 2024-08-13 154749](https://github.com/user-attachments/assets/2a9f36e4-bbb0-4044-a763-b1863ba47a30)
+
+### **_Example External Link from ressources :_** 
+![Image](https://github.com/user-attachments/assets/c06740fd-d11f-41b8-b30e-677f5f00a746)
+
